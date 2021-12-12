@@ -41,6 +41,7 @@ uploaded_file = st.file_uploader('Choose an image...',type=['jpg','jpeg','png','
 
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
+    img_path=f'./{uploaded_file.name}'
     objects = detect_objects(img_path)
     
     #描画
