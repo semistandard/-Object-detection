@@ -1,5 +1,5 @@
-azure
-msrest
+azure == 4.0.0
+msrest == 0.6.21
 array
 os
 PIL
