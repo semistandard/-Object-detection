@@ -39,10 +39,16 @@ st.title('物体検出アプリ')
 
 uploaded_file = st.file_uploader('Choose an image...',type=['jpg','png','jpeg','heic'])
 
+import io
+
+
+
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
-    img_path=f'{uploaded_file.name}'
-    objects = detect_objects(img_path)
+    with io.BytesIO() as output:
+    img.save(output,format='JPEG')
+    binary_img = output.getvalue()
+    objects = detect_objects(binary_img)
     
     #描画
     draw = ImageDraw.Draw(img)
