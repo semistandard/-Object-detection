@@ -41,10 +41,8 @@ uploaded_file = st.file_uploader('Choose an image...',type=['jpg','png','jpeg'])
 
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
-    with io.BytesIO() as output:
-        img.save(output,format='JPEG')
-        binary_img = output.getvalue()
-    objects = detect_objects(binary_img)
+#     st.image(img)
+#     objects = detect_objects()
     
     #描画
     draw = ImageDraw.Draw(img)
