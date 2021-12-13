@@ -46,8 +46,8 @@ import io
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
     with io.BytesIO() as output:
-    img.save(output,format='JPEG')
-    binary_img = output.getvalue()
+        img.save(output,format='JPEG')
+        binary_img = output.getvalue()
     objects = detect_objects(binary_img)
     
     #描画
