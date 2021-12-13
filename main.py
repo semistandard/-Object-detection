@@ -49,8 +49,8 @@ if uploaded_file is not None:
     st.image(img)
 #     img_path = os.path.join(IMG_PATH, uploaded_file.name)
     with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
-        fp = Path(tmp_file.name)
-        fp.write_bytes(uploaded_file.getvalue())
+        img_path = Path(tmp_file.name)
+        img_path.write_bytes(uploaded_file.getvalue())
 
         st.write(f'{img_path}')
         objects = detect_objects(img_path)
