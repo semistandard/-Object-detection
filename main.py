@@ -44,8 +44,8 @@ if uploaded_file is not None:
 #     st.image(img)
 #     objects = detect_objects()
     
-#     #描画
-#     draw = ImageDraw.Draw(img)
+    #描画
+    draw = ImageDraw.Draw(img)
 #     for object in objects:
 #         x = object.rectangle.x
 #         y = object.rectangle.y
