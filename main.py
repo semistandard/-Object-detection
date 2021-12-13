@@ -40,7 +40,7 @@ st.title('物体検出アプリ')
 
 uploaded_file = st.file_uploader('Choose an image...',type=['jpg','png','jpeg'])
 
-IMG_PATH = 'path'
+IMG_PATH = 'path/to'
 
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
