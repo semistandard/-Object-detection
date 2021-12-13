@@ -46,6 +46,8 @@ if uploaded_file is not None:
     img = Image.open(uploaded_file)
     st.image(img)
     img_path = os.path.join(IMG_PATH, uploaded_file.name)
+    with open(img_path, 'wb') as f:
+        f.write(file.read())
     st.write(f'{img_path}')
     objects = detect_objects(img_path)
     
