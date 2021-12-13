@@ -34,15 +34,19 @@ def detect_objects(filepath):
 
 import streamlit as st
 from PIL import ImageDraw, ImageFont
+import os
 
 st.title('物体検出アプリ')
 
 uploaded_file = st.file_uploader('Choose an image...',type=['jpg','png','jpeg'])
 
+IMG_PATH = 'imgs'
+
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
     st.image(img)
-#     objects = detect_objects()
+    img_path = os.path.join(IMG_PATH, uploaded_file.name)
+    objects = detect_objects(img_path)
     
     #描画
     draw = ImageDraw.Draw(img)
