@@ -40,12 +40,12 @@ st.title('物体検出アプリ')
 
 uploaded_file = st.file_uploader('Choose an image...',type=['jpg','png','jpeg'])
 
-# IMG_PATH = 'imgs'
+IMG_PATH = 'path'
 
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
     st.image(img)
-    img_path = os.path.join(uploaded_file.name)
+    img_path = os.path.join(IMG_PATH, uploaded_file.name)
 
     st.write(f'{img_path}')
     objects = detect_objects(img_path)
