@@ -42,6 +42,7 @@ uploaded_file = st.file_uploader('Choose an image...',type=['jpg','png','jpeg'])
 
 IMG_PATH = 'path/to'
 import tempfile
+from pathlib import Path
 
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
